@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Coffee, Clock, Users, MapPin, Phone, Mail,
   Star, Calendar, ChefHat, Sparkles, Heart, Music, Search, Leaf,
-  ArrowRight, ChevronDown, Wifi, Car, Send, X,
+  ArrowRight, ChevronDown, Wifi, Car, X,
 } from "lucide-react";
 
 function Instagram({ size = 18 }: { size?: number }) {
@@ -164,20 +164,21 @@ function Index() {
                 <div className="mt-auto flex flex-col gap-3">
                   {selectedDish.recipe && (
                     <Link
-                      to={`/recipe/${encodeURIComponent(selectedDish.name)}`}
+                      to="/recipe/$dishName"
+                      params={{ dishName: encodeURIComponent(selectedDish.name) }}
                       onClick={() => setSelectedDish(null)}
                       className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground py-3 font-medium hover:bg-primary/90 transition-colors"
                     >
                       View Recipe
                     </Link>
                   )}
-                  <Link
-                    to="#reserve"
+                  <a
+                    href="#reserve"
                     onClick={() => setSelectedDish(null)}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-full gradient-gold py-3 text-white shadow-gold font-medium hover:scale-[1.01] transition-transform"
                   >
                     Reserve a Table <ArrowRight size={16} />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

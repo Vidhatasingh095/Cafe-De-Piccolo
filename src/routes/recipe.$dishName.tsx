@@ -193,12 +193,12 @@ function RecipeDetailPage() {
             {/* Reserve Button */}
             <Reveal delay={0.3}>
               <div className="mt-12 flex justify-center">
-                <Link
-                  to="/#reserve"
+                <a
+                  href="/#reserve"
                   className="inline-flex items-center justify-center gap-3 rounded-full gradient-gold px-8 py-4 text-white shadow-gold font-medium text-lg hover:scale-[1.01] transition-transform"
                 >
                   Reserve a Table
-                </Link>
+                </a>
               </div>
             </Reveal>
           </div>
